@@ -198,7 +198,7 @@
       <div class="modal-header">
         <button class="close" data-dismiss="modal">×</button>
         <h2>Add Indexs</h2>
-        <sapn>A document that contains the field and value pairs where the field is the index key. 1 for an ascending and -1 for an descending index. 
+        <sapn>A document that contains the field and value pairs where the field is the index key. 1 for an ascending and -1 for an descending index.
 </span>
       </div>
       <div class="modal-body" id = "index-modal-body">
@@ -208,7 +208,7 @@
       </div>
       <div class="modal-footer">
         <button class="btn btn-error" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-success" onclick="return checkValidIndexJSON()"> 
+        <button type="submit" class="btn btn-success" onclick="return checkValidIndexJSON()">
              <span class="glyphicon glyphicon-pencil"></span>
           Save
         </button>
@@ -337,39 +337,8 @@
     {% endif %}
 
   </div>
-  <h2>Tools</h2>
+  <!--<h2>Tools</h2>-->
   <div class="row">
-    <div class="col-sm-6 {% if !settings.read_only %}col-lg-3{% endif %}">
-      <div class="well">
-      <a href="{{ baseHref }}db/{{ dbName }}/export/{{ collectionName | url_encode }}" class="btn btn-warning btn-block">
-        <span class="glyphicon glyphicon-floppy-save"></span><br>Export Standard
-      </a>
-      </div>
-    </div>
-
-    <div class="col-sm-6 {% if !settings.read_only %}col-lg-3{% endif %}">
-      <div class="well">
-      <a href="{{ baseHref }}db/{{ dbName }}/expArr/{{ collectionName | url_encode }}" class="btn btn-warning btn-block">
-        <span class="glyphicon glyphicon-floppy-save"></span><br>Export --jsonArray
-      </a>
-      </div>
-    </div>
-
-    <div class="col-sm-6 {% if !settings.read_only %}col-lg-3{% endif %}">
-      <div class="well">
-      <a href="{{ baseHref }}db/{{ dbName }}/expCsv/{{ collectionName | url_encode }}" class="btn btn-warning btn-block">
-        <span class="glyphicon glyphicon-floppy-save"></span><br>Export --csv
-      </a>
-      </div>
-    </div>
-
-    <div class="col-sm-6 {% if !settings.read_only %}col-lg-3{% endif %}">
-      <div class="well">
-      <a href="{{ baseHref }}db/{{ dbName }}/reIndex/{{ collectionName | url_encode }}" class="btn btn-warning btn-block">
-        <span class="glyphicon glyphicon-resize-small"></span><br>Reindex
-      </a>
-      </div>
-    </div>
 
     {% if !settings.read_only %}
       <div class="col-sm-6 col-lg-3">
