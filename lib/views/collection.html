@@ -373,14 +373,14 @@
 
     {% if !settings.read_only %}
       <div class="col-sm-6 col-lg-3">
-        <div class="well">
+        <div>
           <a href="{{ baseHref }}db/{{ dbName }}/compact/{{ collectionName | url_encode }}" class="btn btn-danger btn-block">
             <span class="glyphicon glyphicon-resize-small"></span><br>Compact
           </a>
         </div>
       </div>
       <div class="col-sm-6 col-lg-3">
-        <form method="POST" action="{{ baseHref }}db/{{ dbName }}/{{ collectionName | url_encode }}" id="db-{{ dbName }}-{{ collectionName }}" class="well">
+        <form method="POST" action="{{ baseHref }}db/{{ dbName }}/{{ collectionName | url_encode }}" id="db-{{ dbName }}-{{ collectionName }}">
           <input type="hidden" name="_method" value="delete">
           <input type="submit" class="hidden" />
           <button class="btn btn-danger deleteButtonCollection btn-block" collection-name="{{ collectionName }}" childof="db-{{ dbName }}-{{ collectionName }}">
