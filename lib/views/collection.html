@@ -74,7 +74,7 @@
 {% endblock %}
 
 {% block content %}
-  {% if !settings.read_only %}
+  {% if !true %}
     <p>
       <button type="button" data-toggle="modal" data-target="#addDocument" class="btn btn-success btn-large">
         <span class="glyphicon glyphicon-pencil"></span>
@@ -144,7 +144,7 @@
       </form>
     </div>
   </div>
-  {% if !settings.read_only && count > 0 %}
+  {% if !true && count > 0 %}
   <p>
     <form id="deleteListForm" method="POST" style="display:inline;" action="{{ baseHref }}db/{{ dbName }}/{{ collectionName | url_encode }}?key={{ key }}&value={{ value }}&type={{ type }}&query={{ query }}&projection={{ projection }}">
       {# Router is smart enough to transform method=POST + _method=delete into actual HTTP DELETE, which is what we want #}
@@ -266,7 +266,7 @@
         <tr onclick="loadDocument('{{ document._id | json | safe | url_encode }}')">
           {% for column in columns %}
             <td><div class="tableContent">
-              {% if !settings.read_only && column === '_id' && collectionName !== 'system.indexes' %}
+              {% if !true && column === '_id' && collectionName !== 'system.indexes' %}
                 <form class="deleteButtonDocument" method="POST" style="display:inline;" action="{{ baseHref }}db/{{ dbName }}/{{ collectionName | url_encode }}/{{ document._id | json | safe | url_encode }}?skip={{ skip }}&key={{ key }}&value={{ value }}&type={{ type }}&query={{ query }}&projection= {{ projection }}">
                 <input type="hidden" name="_method" value="delete">
                 <button type="submit" class="btn btn-danger">
@@ -319,7 +319,7 @@
   {% endif %}
 
   <div class="row">
-    {% if !settings.read_only %}
+    {% if !true %}
       <div class="col-md-12">
         <h2>Rename Collection</h2>
         <form method="POST" action="{{ baseHref }}db/{{ dbName }}/{{ collectionName | url_encode }}" class="well form-inline">
@@ -340,7 +340,7 @@
   <!--<h2>Tools</h2>-->
   <div class="row">
 
-    {% if !settings.read_only %}
+    {% if !true %}
       <div class="col-sm-6 col-lg-3">
         <div>
           <a href="{{ baseHref }}db/{{ dbName }}/compact/{{ collectionName | url_encode }}" class="btn btn-danger btn-block">
@@ -513,7 +513,7 @@
           <div>{% if k != 'key' && k != 'v' && k != 'name' && k != 'ns' && k != 'size'%} {{ k }}: &nbsp;{{ v }} {% endif %}</div>
           {% endfor %}
         </td>
-      {% if !settings.read_only %}
+      {% if !true %}
         <td>
           <a class="btn btn-danger" href="{{ baseHref }}db/{{ dbName }}/dropIndex/{{ collectionName | url_encode }}?name={{ index.name }}">
             <span class="glyphicon glyphicon-trash"></span> &nbsp;DEL

@@ -20,7 +20,7 @@
     <div style="display: inline-block;">
       <h4 style="font-weight: bold;">Databases</h4>
     </div>
-    {% if !settings.read_only %}
+    {% if !true %}
     <form class="form-inline" method="POST" style="float:right;">
       <div class="input-group">
         <input class="form-control" type="text" id="database" name="database" placeholder="Database Name" title="Database Name">
@@ -44,7 +44,7 @@
       </a>
     </td>
     <td><h3><a href="{{ baseHref }}db/{{ db }}/">{{ db }}</a></h3></td>
-    {% if !settings.read_only %}
+    {% if !true %}
     <td class="col-md-2">
       <form method="POST" id="db-{{ db }}" action="{{ baseHref }}{{ db }}" style="margin: 0px;">
         <input type="hidden" name="_method" value="delete">
@@ -60,7 +60,7 @@
 </table>
 </div>
   </div>
-{% if !settings.read_only %}
+{% if !true %}
 <div id="confirm-deletion" class="modal fade" role="dialog" aria-labelledby="confirmDeletionLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -188,7 +188,7 @@
 
 
 {% block scripts %}
-{% if !settings.read_only %}
+{% if !true %}
 <script src="{{ baseHref }}{{ assets.index.js }}"></script>
 {% endif %}
 {% endblock %}

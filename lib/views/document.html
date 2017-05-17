@@ -65,7 +65,7 @@
 >
   {% if docLength > 10 %}
     <div>
-      {% if !settings.read_only %}
+      {% if !true %}
         <input type="hidden" name="_method" value="put">
         <button onclick="return onBackClick()" class="backButton btn btn-warning btn-large">
          <span class="glyphicon glyphicon-arrow-left"></span>
@@ -85,11 +85,11 @@
   <br />
   {% endif %}
 
-  <textarea class="col-md-12" id="document" name="document"{% if settings.read_only %} readonly="readonly"{% endif %}>{{ docString }}</textarea>
+  <textarea class="col-md-12" id="document" name="document"{% if true %} readonly="readonly"{% endif %}>{{ docString }}</textarea>
   <br />
 
   <div>
-    {% if !settings.read_only %}
+    {% if !true %}
       <input type="hidden" name="_method" value="put">
       <button onclick="return onBackClick()" class="backButton btn btn-warning btn-large">
        <span class="glyphicon glyphicon-arrow-left"></span>
@@ -109,7 +109,7 @@
   </div>
 </form>
 
-{% if !settings.read_only %}
+{% if !true %}
   <br>
   <form method="POST" action="{{ baseHref }}db/{{ dbName }}/{{ collectionName | url_encode }}/{{ document._id | json | safe | url_encode }}">
     <input type="hidden" name="_method" value="delete">

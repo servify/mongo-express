@@ -22,7 +22,7 @@
     <div style="display: inline-block;">
     <h4 style="font-weight: bold;">Collections</h4>
       </div>
-    {% if !settings.read_only %}
+    {% if !true %}
         <form class="form-inline" method="POST" style="float: right;">
           <div class="input-group">
             <input class="form-control" type="text" id="collection" name="collection" placeholder="Collection Name" title="Collection Name">
@@ -57,7 +57,7 @@
           </a>
         </td>-->
         <td><h3><a href="{{ baseHref }}db/{{ dbName }}/{{ c | url_encode }}">{{ c }}</a></h3></td>
-        {% if !settings.read_only %}
+        {% if !true %}
         <td class="col-md-1">
           <form method="POST"
             id="db-{{ dbName }}-{{ c }}"
@@ -123,7 +123,7 @@
 </table>
 {% endif %}
 
-{% if !settings.read_only %}
+{% if !true %}
 <!--div class="row">
   <div class="col-md-6">
     <h2>Create Collection</h2>
@@ -229,7 +229,7 @@
 {% endblock %}
 
 {% block scripts %}
-{% if !settings.read_only %}
+{% if !true %}
 <script src="{{ baseHref }}{{ assets.database.js }}"></script>
 {% endif %}
 {% endblock %}
